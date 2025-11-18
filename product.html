@@ -1,67 +1,64 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Details — Quiet Pages</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The River Between — Quiet Pages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body{
-      margin:0;
-      background:#0f1724;
-      color:#e6eef8;
-      font-family:Poppins, sans-serif;
-      padding:30px;
-    }
-    .wrap{max-width:900px;margin:0 auto;}
-    a{color:#6ee7b7;}
-
-    .product-box{
-      display:grid;
-      grid-template-columns:300px 1fr;
-      gap:24px;
-      background:rgba(255,255,255,0.03);
-      padding:24px;
-      border-radius:14px;
-    }
-    img{width:100%;border-radius:10px;}
-
-    .price{font-size:22px;font-weight:600;margin:14px 0;}
-    button{
-      background:linear-gradient(90deg,#6ee7b7,#3b82f6);
-      padding:12px 18px;
-      border:none;
-      border-radius:12px;
-      color:#04122b;
-      font-weight:600;
-      cursor:pointer;
-    }
+    :root{ --bg:#0f1724; --muted:#94a3b8; --accent-start:#6ee7b7; --accent-end:#3b82f6; }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#e6eef8;font-family:Poppins,system-ui;padding:28px}
+    .wrap{max-width:980px;margin:0 auto}
+    a{color:var(--muted);text-decoration:none}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    header h1{font-family:'Cormorant Garamond',serif;margin:0}
+    .product{display:grid;grid-template-columns:320px 1fr;gap:22px;background:rgba(255,255,255,0.02);padding:22px;border-radius:12px}
+    .product img{width:100%;height:auto;border-radius:10px;display:block}
+    .meta h2{margin:0 0 6px;font-family:'Cormorant Garamond',serif}
+    .meta p{color:var(--muted);margin:0 0 14px}
+    .price{font-size:20px;font-weight:700;margin-bottom:14px}
+    .buy{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:#021226;border:none;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+    footer{margin-top:26px;color:var(--muted);font-size:13px}
+    @media (max-width:720px){ .product{grid-template-columns:1fr} }
   </style>
 </head>
-
 <body>
   <div class="wrap">
-    <h1>Book Details</h1>
+    <header>
+      <h1>Quiet Pages</h1>
+      <nav><a href="index.html">Home</a> · <a href="index.html#featured">Featured</a></nav>
+    </header>
 
-    <div class="product-box">
-      <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80" alt="Book">
+    <main>
+      <section class="product" aria-labelledby="book-title">
+        <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop" alt="Book cover: The River Between">
+        <div class="meta">
+          <h2 id="book-title">The River Between</h2>
+          <p class="muted">by A. Author — Literary Fiction</p>
 
-      <div>
-        <h2>The River Between</h2>
-        <p style="color:#94a3b8;">Literary Fiction • A. Author</p>
+          <div class="price">₹499</div>
 
-        <div class="price">₹499</div>
+          <p style="color:var(--muted);line-height:1.6">
+            A quiet, reflective novel exploring the invisible threads that hold people together.
+            Perfect for slow afternoons and thoughtful readers.
+          </p>
 
-        <p style="line-height:1.6;color:#94a3b8;">
-          A quiet, reflective novel exploring the invisible threads that hold people together.  
-          Perfect for slow afternoons and thoughtful readers.
-        </p>
+          <!-- Use an anchor to the static payment page — keep it simple for Pages -->
+          <p style="margin-top:18px">
+            <a href="payment.html" style="text-decoration:none">
+              <button class="buy" type="button">Buy Now — ₹499</button>
+            </a>
+          </p>
+        </div>
+      </section>
+    </main>
 
-        <a href="payment.html"><button>Buy Now</button></a>
-      </div>
-    </div>
-
-    <p style="margin-top:20px;"><a href="index.html">← Back to Home</a></p>
+    <footer>
+      © Quiet Pages — <a href="index.html">Return home</a>
+    </footer>
   </div>
 </body>
 </html>
+
+
