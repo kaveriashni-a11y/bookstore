@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZBGXRF7SZN', {'debug_mode':true});
 </script>
   <!-- Google Tag Manager -->
@@ -19,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The River Between — Quiet Pages</title>
+  <title>Book — Quiet Pages</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{ --bg:#0f1724; --muted:#94a3b8; --accent-start:#6ee7b7; --accent-end:#3b82f6; }
@@ -52,22 +51,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <main>
       <section class="product" aria-labelledby="book-title">
-        <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop" alt="Book cover: The River Between">
+        <img id="bookImg" src="" alt="Book cover">
         <div class="meta">
-          <h2 id="book-title">The River Between</h2>
-          <p class="muted">by A. Author — Literary Fiction</p>
+          <h2 id="bookTitle">Loading…</h2>
+          <p id="bookAuthor" class="muted"></p>
 
-          <div class="price">₹499</div>
+          <div class="price" id="bookPrice"></div>
 
-          <p style="color:var(--muted);line-height:1.6">
-            A quiet, reflective novel exploring the invisible threads that hold people together.
-            Perfect for slow afternoons and thoughtful readers.
-          </p>
+          <p id="bookDesc" style="color:var(--muted);line-height:1.6"></p>
 
-          <!-- Use an anchor to the static payment page — keep it simple for Pages -->
+          <!-- Buy button will pass id to payment page -->
           <p style="margin-top:18px">
-            <a href="payment.html" style="text-decoration:none">
-              <button class="buy" type="button">Buy Now — ₹499</button>
+            <a id="buyLink" href="payment.html">
+              <button class="buy" type="button">Buy Now</button>
             </a>
           </p>
         </div>
@@ -78,6 +74,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       © Quiet Pages — <a href="index.html">Return home</a>
     </footer>
   </div>
+
+<script>
+  // Product database (IDs must match those used on index.html)
+  const books = {
+    1: {
+      title: "The River Between",
+      author: "A. Author — Literary Fiction",
+      price: "₹499",
+      img: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop",
+      desc: "A quiet, reflective novel exploring the invisible threads that hold people together. Perfect for slow afternoons and thoughtful readers."
+    },
+    2: {
+      title: "Whispers of Dawn",
+      author: "S. Writer — Contemporary",
+      price: "₹399",
+      img: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop",
+      desc: "A heartwarming story about hope, morning light, and new beginnings."
+    },
+    3: {
+      title: "Echoes of the Past",
+      author: "H. Storyteller — Historical Fiction",
+      price: "₹599",
+      img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop",
+      desc: "A gripping tale of forgotten memories resurfacing across generations."
+    },
+    4: {
+      title: "The Lost Chapters",
+      author: "C. Dreamer — Mystery",
+      price: "₹450",
+      img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop",
+      desc: "A mystery unraveling through missing pages of an ancient manuscript."
+    },
+    5: {
+      title: "Midnight Tales",
+      author: "R. Myth — Fantasy",
+      price: "₹520",
+      img: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop",
+      desc: "A magical collection of stories told only at midnight."
+    },
+    6: {
+      title: "Stories in the Rain",
+      author: "L. Breeze — Romance",
+      price: "₹480",
+      img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop",
+      desc: "Soft, poetic moments shared under rainy skies."
+    }
+  };
+
+  // Read id from URL (e.g., product.html?id=3)
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const numericId = id ? String(id).trim() : null;
+
+  // Choose product: if invalid or missing, default to id=1
+  const book = (numericId && books[numericId]) ? books[numericId] : books[1];
+
+  // Populate page
+  document.getElementById("bookImg").src = book.img;
+  document.getElementById("bookImg").alt = "Book cover: " + book.title;
+  document.getElementById("bookTitle").textContent = book.title;
+  document.getElementById("bookAuthor").textContent = book.author;
+  document.getElementById("bookPrice").textContent = book.price;
+  document.getElementById("bookDesc").textContent = book.desc;
+
+  // Link buy button to payment page and include product id
+  const buyLink = document.getElementById("buyLink");
+  const chosenId = (numericId && books[numericId]) ? numericId : "1";
+  buyLink.href = "payment.html?id=" + encodeURIComponent(chosenId);
+
+</script>
+
 </body>
 </html>
 
