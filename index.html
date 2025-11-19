@@ -85,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* Cards grid */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
-    .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);box-shadow: 0 6px 16px rgba(2,6,23,0.5);}
+    .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);box-shadow: 0 6px 16px rgba(2,6,23,0.5);display:block;color:inherit;text-decoration:none}
     .card img{width:100%;height:220px;object-fit:cover;border-radius:10px}
     .card h4{margin:10px 0 6px;font-size:16px}
     .card p{margin:0;color:var(--muted);font-size:13px}
@@ -181,69 +181,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section id="featured" class="grid">
       <!-- Card 1 -->
-       <a href="product.html?id=6"
-        style="text-decoration:none;color:inherit">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ijkl" alt="book cover 1">
-        <h4>The River Between</h4>
-        <p class="muted">by A. Author • Literary Fiction</p>
-        <div class="price">₹499</div>
-      </article>
-       </a>
+      <a href="product.html?id=1" class="card" aria-label="Open product The River Between">
+        <article>
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop" alt="The River Between cover">
+          <h4>The River Between</h4>
+          <p class="muted">by A. Author • Literary Fiction</p>
+          <div class="price">₹499</div>
+        </article>
+      </a>
 
       <!-- Card 2 -->
-       <a href="product.html?id=1"
-        style="text-decoration:none;color:inherit">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=mnop" alt="book cover 2">
-        <h4>Maps of the Quiet</h4>
-        <p class="muted">by B. Writer • Essays</p>
-        <div class="price">₹649</div>
-      </article>
-       </a>
+      <a href="product.html?id=2" class="card" aria-label="Open product Whispers of Dawn">
+        <article>
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop" alt="Whispers of Dawn cover">
+          <h4>Whispers of Dawn</h4>
+          <p class="muted">by S. Writer • Contemporary</p>
+          <div class="price">₹399</div>
+        </article>
+      </a>
 
       <!-- Card 3 -->
-       <a href="product.html?id=6"
-        style="text-decoration:none;color:inherit">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1476958526483-36efcaa80f58?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=qrst" alt="book cover 3">
-        <h4>Small Objects</h4>
-        <p class="muted">by C. Teller • Short Stories</p>
-        <div class="price">₹399</div>
-      </article>
-       </a>
+      <a href="product.html?id=3" class="card" aria-label="Open product Echoes of the Past">
+        <article>
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop" alt="Echoes of the Past cover">
+          <h4>Echoes of the Past</h4>
+          <p class="muted">by H. Storyteller • Historical Fiction</p>
+          <div class="price">₹599</div>
+        </article>
+      </a>
 
       <!-- Card 4 -->
-       <a href="product.html?id=6"
-        style="text-decoration:none;color:inherit">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=uvwx" alt="book cover 4">
-        <h4>Ocean for One</h4>
-        <p class="muted">by D. Novelist • Poetry</p>
-        <div class="price">₹299</div>
-      </article>
-       </a>
+      <a href="product.html?id=4" class="card" aria-label="Open product The Lost Chapters">
+        <article>
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="The Lost Chapters cover">
+          <h4>The Lost Chapters</h4>
+          <p class="muted">by C. Dreamer • Mystery</p>
+          <div class="price">₹450</div>
+        </article>
+      </a>
 
       <!-- Card 5 -->
-       <a href="product.html?id=5"
-        style="text-decoration:none;color:inherit">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=yzab" alt="book cover 5">
-        <h4>Silent Cities</h4>
-        <p class="muted">by E. Chronicler • Travel Memoir</p>
-        <div class="price">₹549</div>
-      </article>
-       </a>
+      <a href="product.html?id=5" class="card" aria-label="Open product Midnight Tales">
+        <article>
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop" alt="Midnight Tales cover">
+          <h4>Midnight Tales</h4>
+          <p class="muted">by R. Myth • Fantasy</p>
+          <div class="price">₹520</div>
+        </article>
+      </a>
 
       <!-- Card 6 -->
-      <a href="product.html?id=6"
-        style="text-decoration:none;color:inherit">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=cdef" alt="book cover 6">
-        <h4>New Moon Notes</h4>
-        <p class="muted">by F. Poet • Contemporary</p>
-        <div class="price">₹449</div>
-      </article>
+      <a href="product.html?id=6" class="card" aria-label="Open product Stories in the Rain">
+        <article>
+          <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop" alt="Stories in the Rain cover">
+          <h4>Stories in the Rain</h4>
+          <p class="muted">by L. Breeze • Romance</p>
+          <div class="price">₹480</div>
+        </article>
       </a>
     </section>
 
@@ -321,3 +315,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 </body>
 </html>
+
