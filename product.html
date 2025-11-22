@@ -132,7 +132,7 @@
   // Link buy button to payment page and include product id
   const buyLink = document.getElementById("buyLink");
   const chosenId = (numericId && books[numericId]) ? numericId : "1";
-  buyLink.href = "https://bookstoreqp123.netlify.app/payment.html?id=" + encodeURIComponent(chosenId);
+  buyLink.href = "https://bookstoreqp123.netlify.app/payment?id=" + encodeURIComponent(chosenId);
 
 </script>
 
